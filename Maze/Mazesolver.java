@@ -75,16 +75,33 @@ public class Mazesolver{
 	    System.out.println("No starting point 'S' found in maze.");
 	}else{
 	    maze[startx][starty]=' ';
-	    solve(maze,startx,starty);
+	    solve(     startx,starty);
 	}
     }
 
-    public void solve(char[][]maze,int x,int y){
+    public void solve(int x,int y){
+	if(solved)return;
 	wait(20);
 	System.out.println(this);
-	
-	//try to solve the maze here...
-
+	if (maze[x][y] == 'X'){
+	    solved = true;
+	    return;
+	}
+	else {
+	    if (maze[x][y] == ' '){
+		//important shit;
+		maze[x][y] = '@';
+		solve(x+1,y);
+		solve(x-1,y);
+		solve(x,y+1);
+		solve(x,y-1);
+		if(!solved)maze[x][y] = ' ';
+	    }
+	    else {
+		//    ][y] = ' ';
+	    }
+	    
+	}
     }
 
 
