@@ -37,7 +37,7 @@ public class Recursion{
 	else 
 	    return fibHelp(last, penult+last, n-1);
     }
-    private int fibIter(int n){
+    private int fibItr(int n){
 	if (n < 2)
 	    return n;
 	else

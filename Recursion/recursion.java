@@ -1,23 +1,5 @@
-import java.io.*;
-import java.util.*;
+public class recursion{
 
-//Caspar Lant
-
-public class HailStone{
-    
-    public static void main(String[] args){
-	HailStone HS = new HailStone();
-	
-	try{
-	    int n = Integer.parseInt(args[0]);
-	    HS.hail(n);
-	    System.out.println("Hail Length: " + HS.hailLen(n));
-	    System.out.println("Longest Hail: "+ HS.longestHail(n));
-	}
-	catch (Exception e){System.out.println("No input given");
-	}
-    }
-    
     public String firstName(){
 	return "ALEXANDER";
     }
@@ -38,21 +20,6 @@ public class HailStone{
 	else
 	    return hailLen((3*n)+1) + 1;
     }
-
-    public void hail(int n){
-	if (n==1)
-	    System.out.println(n);
-	else {
-	    if (n%2 == 0){
-		System.out.println(n);
-		hail(n/2);
-	    }
-	    if (n%2 == 1){
-		System.out.println(n);
-		hail((3*n)+1);
-	    }
-	}
-    }
     
     public int longestHail(int n){ // 3. longestHail(n) : what starting value from 1 to n generates the longest length sequence.
 
@@ -65,5 +32,21 @@ public class HailStone{
 	    return longestHail(n-1);
 	}
     }	
-}
+
+    private int fibHelp(int penult, int last, int n){
+	if (n == 0)
+	    return penult + last; 
+	else 
+	    return fibHelp(last, penult+last, n-1);
+    }
+    public int fibItr(int n){
+	if (n < 2)
+	    return n;
+	else
+	    return fibHelp(0,1,n-2);
+    }
+
+    public recursion() {	
+    }
     
+}
