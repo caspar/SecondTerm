@@ -17,17 +17,22 @@ public class QuickSort {
     public static int partition (int[]L, int left, int right){
 	Random R = new Random();
     	int[]L2 = new int[right-left]; //6
-	int pivot = L[R.nextInt(right)+left]; 
+	int pivot = L[R.nextInt(right)+left];
+	
+	for (int i = 0; i< 10; i++)
+	System.out.println(R.nextInt(right)+left);
+
+	
 	System.out.println(pivot + " ---> " + L[pivot]); //test
-	int l = 0;
-	int r = 0;
-	for (int i = left; i<right; i++){
-	    if (L[i]<=pivot && i != pivot){
+	int l = 0, r = 0;
+       	for (int i = left; i<right; i++){
+	    System.out.println(Arrays.toString(L2));
+	    if (L[i]<=L[pivot] && i != pivot){
 		L2[left+l] = L[i];
 		l++;
 	    }
 	    else if (i != pivot){
-		L2[(L2.length -1) -r] = L[i]; //dis dont werk
+		L2[(L2.length-1) -r] = L[i]; //dis dont werk
 		r++;
 	    }
 	}
