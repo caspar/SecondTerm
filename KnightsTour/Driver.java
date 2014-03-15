@@ -1,15 +1,14 @@
 public class Driver{
 
     public static void main(String[]args){
-	Mazesolver f;
+
+	Knight k;
 	if(args.length < 1){
-	    f = new Mazesolver("data.dat");
+	    k = new Knight(5);
 	}else{
-	    f = new Mazesolver(args[0]);
+	    k = new Knight(Integer.parseInt(args[0]));
 	}
-	f.solve();
-
-
+	k.solve();
 
     }
 
