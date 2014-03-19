@@ -1,0 +1,391 @@
+2014-02-11
+posted Mar 11, 2014, 2:23 PM by Samuel Konstantinovich
+Quick Select:
+
+Take any array of integers:
+{5,6,2,3,4,10,7,8,9,1,2};    //Sorted would be: {1,2,2,3,4,5,6,7,8,9,10}    
+
+partition around a random number like the number at index 6, which is 7:
+5 is less than 7 so we put it on the left side (we could put everything in a new array to make it easier)
+[5                                ]
+6 is less so left side
+[5 6                             ]
+2 is less... so are 3 and 4.
+[5 6 2 3 4               ]
+10 is too big so we put on right side
+[5 6 2 3 4             10]
+Since we are up to index 6, the 7 is left alone and we go to the 8 which goes to the end, so does the 9:
+[5 6 2 3 4            9 8 10]
+Then the 1 and 2 go to the beginning:
+[5 6 2 3 4 1 2     9 8 10]
+We ran out of values, so we put the 7 in the right place:
+[5 6 2 3 4 1 2 7 9 8 10]  //notice that the 7 is in the correct slot. The same slot it would be in if it were sorted.
+
+This is the partition step that we talked about in class, and we can do it in place instead of making a copy!!!
+
+More on this tomorrow.
+2014-03-06 HW
+posted Mar 6, 2014, 10:07 AM by Samuel Konstantinovich   [ updated Mar 6, 2014, 12:30 PM ]
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+
+public class Person implements Comparable<Person>{
+    private String name;
+
+    public Person(String s){
+    }
+    public String getName(){
+    }
+    public String toString(){
+    }
+   
+    public int compareTo(Person other){
+    }
+}
+
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+
+public class Sorts{
+
+    public static <T extends Comparable<T>> void msort(ArrayList<T> L){
+    }           
+}
+
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+
+import java.util.*;
+public class Driver{
+    public static void main(String[]args){
+ ArrayList<Person> L= new ArrayList<Person>();
+ L.add(new Person("Ben"));
+ L.add(new Person("Dave"));
+ L.add(new Person("Amy"));
+ L.add(new Person("Liz"));
+ L.add(new Person("Portnoy"));
+ L.add(new Person("Wolf"));
+ L.add(new Person("Zed"));
+ L.add(new Person("Xin"));
+ L.add(new Person("Smith"));
+ L.add(new Person("Will"));
+ L.add(new Person("Ed"));
+ L.add(new Person("Eddie"));
+ L.add(new Person("Aaron"));
+ L.add(new Person("Cary"));
+ Sorts.msort(L);
+ System.out.println(L);
+    }
+}
+2014-03-05 - HW
+posted Mar 5, 2014, 5:40 AM by Samuel Konstantinovich   [ updated Mar 6, 2014, 9:49 AM ]
+Goal: Miscelanery, big O, binary search.
+
+0. Homework: (SUBMIT ON HW SERVER)
+Everyone should have a mergesort that works with the int datatype.
+
+Everyone now must make a new mergesort that works with Strings:
+It must work as follows. (You must submit Sorts.java zipped)
+
+public class Sorts{
+
+    public static void msort(ArrayList<String> L){ 
+    /************************YOUR SORT HERE****************/
+    }
+
+    public static String name(){
+        /****************EDIT YOUR NAME HERE:****************/
+        return "Brown,James";
+    }
+
+    //HELPER FUNCTOINS ARE FINE!
+}
+-Use an array list of Strings as your list data type.
+-remember you need to make a lot of changes to make it work
+-Comparisons with > < == etc. do NOT work with objects. if(s1<s2){ } does not work with strings!
+-use set() get() and compareTo()
+
+
+Submit the working String mergesort on the hw server. I will set the deadline tonight 1159, if you got it working with ints, it should be reasonable to get it working with an ArrayList of Strings. (You must submit Sorts.java zipped) 
+
+EXTRA CREDIT: Submit your regular int msort, and your optimized int mergesort:  (
+public class Sorts{
+    public static void msort(int[] L){ 
+          /************************YOUR SORT HERE****************/
+    }
+
+    public static void msortOpt(int[] L){ 
+           /************************YOUR SORT HERE****************/
+    }
+    public static String name(){
+            /****************EDIT YOUR NAME HERE:****************/
+            return "Brown,James";
+    }
+}
+
+1.
+-BigO notation:
+Formal definition that is beyond what you need for this class:
+An algorithm is O( f(n) ) if and only if there is a constant k such that the algorithm runs < k*f(n) for sufficiently large values of n.
+This means big O notation defines an upper bound.
+
+Cool stuff: There are more ways to define complexity such as:  Theta(n) and Omega(n) notation.
+
+2.
+Linear Search vs. Binary Search 
+
+searching for a value returns the index it can be found at in a list. 
+find( 5, {5,4,2} ) -> 0
+find( 5, {3,4,5} ) -> 2
+find( 9, {5,4,2} ) -> -1  (not found)
+
+2014-02-28 HW
+posted Feb 27, 2014, 10:08 PM by Samuel Konstantinovich
+Write a merge function:  
+
+precondition:  both a, and b are sorted.
+postcondition: the resulting array contains all of the elements of a and b, sorted.
+int[] merge(int[]a, int[]b){  }
+
+example
+If you merged : {1,12,13,42,50} and {3, 9,14,100}
+The result is: {1,3,9,12,13,14,52,50,100}
+
+
+
+
+You are JUST writing merge, not the whole mergesort.
+You NEED to have this completed by Monday, 
+2014-02-24 + HW
+posted Feb 22, 2014, 9:02 PM by Samuel Konstantinovich   [ updated Feb 24, 2014, 8:31 AM ]
+Reminder: You are supposed to be done with the knight's tour by Wednesday (in class)
+
+
+HW: You are submitting your recursion lab on the HW server
+You must submit a zip or rar file on the homework server by tonight 2/24/2014 11:59pm  (The slot should be called recursion, pay attention to assignment names, and DO NOT submit things unless I explicitly say submit on the HW Server)
+
+EDIT: HW server for those that forgot. Default password is your 4 digit ID.
+http://bert.stuy.edu/skonstantinovich/spring2014/pages.py
+If you are not on the list of students, Or you are in the wrong class, please email me. Include your 4digit +9 digit ID, so I can fix it faster.
+
+1. Take the template, insert your code, and make sure it compiles. 
+2. Zip or Rar the file, then upload the file to the homework server. 
+    (The Zip or Rar file must contain a single java file:  recursion.java. There must be no extra directories just the java file. )
+3. Verify that you have submitted the assignment by checking to see if the file was attached. 
+
+Here is your template:
+
+public class recursion{
+    public String lastName(){
+        /*change this! to your name*/
+        return "LAST_NAME_HERE!!!!";
+    }
+    public String firstName(){
+        /*change this! to your name*/
+        return "FIRST_NAME_HERE!!!!";
+    }
+    public int hailLen(int n){
+        /*put in your code here...*/
+    }
+    public int longestHail(int n){
+        /*put in your code here...*/
+    }
+    public int fibItr(int n){
+        /*put in your code here...*/
+    }
+
+    public recursion(){
+        /*leave alone*/
+    }
+}
+
+
+DO NOT SUBMIT THE NEXT FILE!!! IT IS FOR TESTING ONLY.
+If you want to test your code the way I would test it, this program would print out 3 values from your 3 different functions. It should not print ANYTHING else. 
+public class Driver{
+
+    public static void main(String[]args){
+        /*create an instance of what you are testing*/
+        recursion a = new recursion();
+        /*run calculations*/
+        System.out.println(a.fibItr(5));
+        System.out.println(a.hailLen(5));
+        System.out.println(a.longestHail(5));
+    }
+}
+
+
+
+2014-02-11
+posted Feb 11, 2014, 10:48 AM by Samuel Konstantinovich   [ updated Feb 11, 2014, 11:19 AM ]
+GOAL: More recursion problems!!!
+
+
+
+You should complete hail, hailLen, and longestHail recursively. 
+You don't have to use hail(n) in the other parts; however, you probably DO want to use hailLen in longestHail.
+1. Basic:
+hail(n)
+
+n=1 
+  print n 
+n=even 
+  print n 
+  hail(n/2)
+n=odd 
+  print n 
+  hail(3n+1)
+
+example:
+hail(1) 1
+hail(2) 2 1
+hail(3) 3 10 5 16 8 4 2 1
+hail(4) 4 2 1
+hail(5) 5 16 8 4 2 1
+hail(6) 6 3 10 5 16 8 4 2 1
+
+
+2. hailLen(n) : What is the length of the sequence generated by hail(n)
+
+example:
+hailLen(1) : 1
+hailLen(2) : 2
+hailLen(3) : 8
+hailLen(4) : 3
+hailLen(5) : 6
+hailLen(6) : 9
+
+3. longestHail(n) : what starting value from 1 to n generates the longest length sequence.
+examples:
+longestHail(1)  : 1    
+longestHail(2)  : 2
+longestHail(3)  : 3  
+longestHail(4)  : 3
+longestHail(5)  : 3
+longestHail(6)  : 6   
+
+
+
+
+
+2014-02-10
+posted Feb 10, 2014, 8:44 AM by Samuel Konstantinovich   [ updated Feb 10, 2014, 12:25 PM ]
+Homework: 
+By this Friday you must complete the exercises at the end of part 2 and 3 of the student manual. (GridWorld_Case_Study_Student_Manual)
+
+Please use the mailing list for assistance, and help your compatriots. I see great stuff being posted there, keep it up!
+
+By Tomorrow: You should have a working copy of the recursion assignment on a working computer in school. Don't put it in gmail it will take too long.
+You can ftp or ssh into the lab, but not marge.
+149.89.161.100 is marge, but it is broken.
+149.89.161.101 or 102 or 103... up to 130 will work however.
+:
+a.
+int fact(int n) -  return the value of the n!  Remember 0! is 1, and 1! is also 1.
+b.
+int fib(int n) - return the value of the nth Fibonacci number. This should be the naive solution from class.
+Where:   
+fib(0) is 0   
+fib(1) is 1  
+fib(2) is 1  
+fib(3) is 2   ...etc. 
+c.
+int fibItr(int n) - return the value of the nth Fibonacci number. This must complete in at most linear time. 
+
+To complete c, you need a different function that allows parameters other than n. 
+
+Pretend you want to find fibItr(5)
+
+You would say: 
+0th is 0 (given)
+1st is 1 (given)
+Other values you need to recurse, so you start to find the next value...
+[0, 1] next can be calculated as 1, and i need 3 more (SEE BELOW)
+[0, 1, 1 ] next can be calculated as 2, and i need 2 more
+[0 1 1 2] next is 3 and i need 1 more.
+[0 1 1 2 3] answer is 5.
+
+
+so you could make a fib function that keeps track of the LAST two values
+fibHelp(last,2ndLast,n)   ->  fibHelp(0,1,3)  
+and that would call:
+fibHelp(1,1,2) which calls:
+fibhelp(1,2,1) ... etc.
+2014-02-06 + HW
+posted Feb 6, 2014, 8:34 AM by Samuel Konstantinovich
+CLASSWORK:
+Due to my absence, all you have to do is set up gridworld on ALL student accounts. After you get it to work, log out and help others that don't have it working / don't have working computers.
+
+Gridworld files are found on your computers here:
+/home/support/konstans/java/grid/GridWorldCode.zip
+/home/support/konstans/java/grid/XBugSampleCode.zip
+
+You can copy the files to your home directory in several ways:
+
+cp /home/support/konstans/java/grid/GridWorldCode.zip  <TARGET LOCATION>
+where <TARGET LOCATION> is a directory that exists such as: 
+~/Documents/ 
+~/Documents/gridworld/    (notice the / at the END of the line, that means it is a directory not a file name)
+etc.
+
+lets assume you made ~/Documents/gridworld/ and copied both files there.
+
+unzip GridWorldCode.zip
+unzip XBugSampleCode.zip
+javac -cp .:~/Documents/gridworld/GridWorldCode/gridworld.jar  XBug1Runner.java
+OR as a shortcut that only works when you are in the gridworld directory:
+javac -cp .:GridWorldCode/gridworld.jar  XBug1Runner.java  
+
+Finally run the test:
+java -cp .:~/Documents/gridworld/GridWorldCode/gridworld.jar  XBug1Runner
+
+
+Homework: 
+1. Fill out the form from yesterday if you haven't done so. If you don't do this you will start to gain severe penalties every day that you do not complete it... When you build up enough 'penalty points' I will point and laugh at you. Also you won't be on the mailing list. 
+
+2. Find a tutorial, either a website or series of videos, and post your link, and your thoughts on the mailing list that will be set up today. If you like the link someone else posted, or found the same website, reply to their thread on the mailing list and comment on what you thought about it. I want everyone to share their ideas on the mailing list after I set it up today, and learn to set up a filter so the mailing list goes to a folder in their gmail instead of their inbox. 
+
+
+The tutorials should explain either of the following:
+a) how to set up gridworld on your computer
+b) a broad overview of gridworld / using gridworld
+
+If you have problems getting gridworld working, focus on finding (a) to get it to work, othewise focus on (b). 
+If you didn't get gridworld working yesterday, it should be working at home after you complete this. 
+
+
+
+2014-02-05 + HW
+posted Feb 4, 2014, 10:09 AM by Samuel Konstantinovich   [ updated Feb 5, 2014, 9:24 AM ]
+Goal: Gridworld Introduction
+
+1. Here is the information on GRIDWORLD:
+    http://apcentral.collegeboard.com/apc/public/courses/teachers_corner/151155.html
+
+On that page there are some useful documents: You will need to install gridworld on your home computers in order to make it work
+1a. The AP CS quick reference:
+   http://apcentral.collegeboard.com/apc/public/repository/ap_comp_sci_a_quick_reference.pdf
+
+1b. The grid world student manual to use as reference: (keep it handy)
+   https://secure-media.collegeboard.org/ap-student/course/gridworld/AP_Computer-Science-A-Grid-World-Student-Manual.pdf
+
+CLASSWORK:
+1. Set up gridworld (Follow the installation guide on the website)
+-Get the main gridworld files ( Code (.zip/238KB) )
+-Get the sample gridworld code. ( XBug Sample Code (.zip/3KB) )
+a. You can download easily with the terminal using the wget command:
+
+e.g. to download file.zip from  blah.com you would say:
+wget  http://blah.com/file.zip    
+
+b. You can extract files by using the unzip commmand:
+unzip file.zip
+
+2. Test the test file by following the compile guidelines.
+
+
+
+HOMEWORK:
+1. All students must fill out the mailing list form:
+  https://docs.google.com/forms/d/1BCkf6JgZjT5Xlr2ngLKZex2_hKKRJJexpBctT-B45NA/viewform
+2. Make sure you configure gridworld at home! You cannot run gridworld through the terminal from school because it is GUI based.

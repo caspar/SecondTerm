@@ -10,64 +10,68 @@ public class Knight{
     public Knight(int n){
 	maxy=maxx=n;
 	board = new int[n][n];
-	for(int y =0; y<maxy; y++){
-	    for(int x=0;x<maxx;x++){
-		
-	    }
-	}
+	//for(int y =0; y<maxy; y++){
+	//    for(int x=0;x<maxx;x++){
+	       
     }
 
-    public void wait (int millis){
+    public Knight(){
+	this(5);
+    }
+
+    public void wait(int millis){
 	try{
 	    Thread.sleep(millis);
 	}
-	catch (Excpetion e){}
+	catch (Exception e){}
     }
 
-    public String go(int x,int y){
-	return ("["+x+";"+y+"H");
-    }
-    
-    public String clear(){
-	return  "[2J";
-    }
 
     public String toString(){
-	String s = "";	
-	for (int y = 2; y < maxy;y++){
-	    for (int x = 2; x < maxx; X++){
-	 	s += "/t"
- 	    }
-	    S += "/n";
+	String s = "";
+
+	for (int x = 0; x < maxx; x++) {
+	    for (int y = 0; y < maxy; y++ ) {
+		s = s + " " + board[x][y];
+	    }
+	    s = s + "\n";
 	}
-	
+	return s;
     }
     
     public void solve(){
-	solve(2,2,1);
+	solve(0,0,1);
     }
     
     public void solve(int x, int y, int n){
-	if(solved)return;
+	//if(solved)return;
 	wait(20);
 	System.out.println(this);
 	
 	if (n > (maxy-4)*(maxx-4)){
-	    solved == true;
+	    solved = true;
 	    return;
 	}
+	
 	else {
 	    if (board[x][y] == 0){
 		board[x][y] = n;
 		solve(x+1,y+2,n+1);
+	 	if(!solved)board[x][y]=0;
 	 	solve(x+1,y-2,n+1);
+		if(!solved)board[x][y]=0;
 	 	solve(x-1,y+2,n+1);
+		if(!solved)board[x][y]=0;
 	 	solve(x-1,y-2,n+1);
+		if(!solved)board[x][y]=0;
 		solve(x+2,y+1,n+1);
+		if(!solved)board[x][y]=0;
 	 	solve(x+2,y-1,n+1);
+		if(!solved)board[x][y]=0;
 	 	solve(x-2,y+1,n+1);
+		if(!solved)board[x][y]=0;
 	 	solve(x-2,y-1,n+1);
-	 	if(!solved)maze[x][y]=0;
+	 	if(!solved)board[x][y]=0;
 	    }
 	}
     }
