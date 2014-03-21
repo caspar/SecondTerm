@@ -12,7 +12,7 @@ public class Node{
     }
     public Node getNext(){
 	return next;
-    }
+1    }
     public void setData(String data){
 	this.data=data;
     }
