@@ -41,6 +41,7 @@ public class QuickSort {
     public static void quicksort(int[]L, int left, int right){
 	System.out.println(Arrays.toString(L));
 	int pindex = partition(L,left,right);
+	System.out.println(pindex);
 	if (L.length < 2){
 	    return;
 	}
