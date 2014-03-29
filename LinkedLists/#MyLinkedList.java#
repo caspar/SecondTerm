@@ -1,39 +1,74 @@
-public class MyLinkedList{
-    public static void main(String[] args){
-	
-    }
-    
-    private Node next;
-    private String data;
-    private int position;
+public class MyLinkedList<T>{
+
+    private Node<T> head;
+    private Node<T> tail;
+    private int  length;
     
     public MyLinkedList(){
-	
+	head=new Node<T>();
+	head.setData(null);
     }
-    public String get(int position){
-	for (int i=0;i<position;i++){
-	    
-	}
+    
+    public String get(int i){
+	return getNode(i).getData();
     }
-    public void set(int position, String newString){
-	 
+    
+    public void set(int position, T newString) throws Exception{
+	getNode(i).setData(newString);
     }
-    public void remove(int position){
-	
-    }
-    public int find(String s){
-	while (data != s)
-	    if (s.equals(this.getData)) return s; 
-	    
-    }
-    public int length(){
-	int length = 0;
-	while (){
-	    
-	}
+
+    public int size(){
 	return length;
     }
-    public String toString(){
-	
+
+    public void add(T data){
+	add(length, data);
+    }
+
+    public void add(int index, T data){
+	//Throw Exception
+	Node<T> temp = new Node<T>(data);
+	temp.setNext(getNode(index-1).getNext());
+	getNode(index-1).setNext(temp);
+	length++;
+    }
+    
+    public void remove(int index) throws Exception{
+	Node<T> first = getNode(index-1);
+	first.setNext(first.getNext().getNext()); 
+	//removes Node at i by dereferencing it.
+    }
+
+    private Node<T> getNode(int i)throws Exception{
+	if(i<-1 || i >=length)
+	    throw new IndexOutOfBoundsException("Index out of bounds, fool!");
+	Node<T> temp = head;
+	for (int x=0; x<i; x++){
+	    temp = temp.getNext();
+	}
+	return temp;
+    }
+    
+    public int find(T s){
+	for (int i = 0; i < length();i++){
+	    if (getNode(i).getData().equals(s))
+		return i;
+	}
+	return -1;
+    }
+    
+    public int length(){
+	return length;
+    }
+
+    public String toString(){	
+	String s = "[ ";
+	Node temp = head;
+	while (temp.getNext() != null){
+	    s+= temp.getData() + ", ";
+	    temp = temp.getNext
+	}
+	s+= " ]";
+	return s;
     }
 }
