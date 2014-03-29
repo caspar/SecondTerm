@@ -1,79 +1,38 @@
-import java.util.*;
 import java.io.*;
+import java.util.*;
+
 public class Knight{
-
-    private int[][]board;
-    private int maxx,maxy;
-    private int startx,starty;
-    private boolean solved = false;
     
-    public Knight(int n){
-	maxy=maxx=n;
-	board = new int[n][n];
-	//for(int y =0; y<maxy; y++){
-	//    for(int x=0;x<maxx;x++){
-	       
-    }
+    private int[][] board;
+    private int height, width;
+    private int startx, starty;
+    private boolean solved = false;
+    private boolean foundStart = false;
 
-    public Knight(){
-	this(5);
-    }
-
-    public void wait(int millis){
-	try{
-	    Thread.sleep(millis);
+    public Knight(int n){ //creates board
+	maxx=n+4;
+	maxy=n+4;
+	board = new int[maxx][maxy];
+	for(int i=0; i<board.length;i++){
+	    for(int j=0;j<board[i].length;j++){
+		if(i<2 || i>maxx-3 || j<2 || j>maxy-3){
+		    board[i][j]=-1;
+		}
+	    }
 	}
-	catch (Exception e){}
     }
-
-
+    
     public String toString(){
 	String s = "";
-
-	for (int x = 0; x < maxx; x++) {
-	    for (int y = 0; y < maxy; y++ ) {
-		s = s + " " + board[x][y];
+	for(int i=0;i<board.length;i++){
+	    for(int j=0;j<board[i].length;j++){
+		s+=board[i][j]+"\t";
 	    }
-	    s = s + "\n";
+	    s+="\n"+"\n";
 	}
 	return s;
     }
-    
-    public void solve(){
-	solve(0,0,1);
-    }
-    
-    public void solve(int x, int y, int n){
-	//if(solved)return;
-	wait(20);
-	System.out.println(this);
-	
-	if (n > (maxy-4)*(maxx-4)){
-	    solved = true;
-	    return;
-	}
-	
-	else {
-	    if (board[x][y] == 0){
-		board[x][y] = n;
-		solve(x+1,y+2,n+1);
-	 	if(!solved)board[x][y]=0;
-	 	solve(x+1,y-2,n+1);
-		if(!solved)board[x][y]=0;
-	 	solve(x-1,y+2,n+1);
-		if(!solved)board[x][y]=0;
-	 	solve(x-1,y-2,n+1);
-		if(!solved)board[x][y]=0;
-		solve(x+2,y+1,n+1);
-		if(!solved)board[x][y]=0;
-	 	solve(x+2,y-1,n+1);
-		if(!solved)board[x][y]=0;
-	 	solve(x-2,y+1,n+1);
-		if(!solved)board[x][y]=0;
-	 	solve(x-2,y-1,n+1);
-	 	if(!solved)board[x][y]=0;
-	    }
-	}
-    }
-    
+
+
+
 }
