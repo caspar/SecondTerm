@@ -1,66 +1,60 @@
 import java.io.*;
 import java.util.*;
 
-public class QuickSort {
-    
-    
-    public static void main(String[] args){
-	int[]A={1, 7, 3, 5, 4, 2, 6};
-	int[]L=makeArray(10, 10);
-	System.out.println(Arrays.toString(A)); 
-	quicksort(L);
+public class quicksort{
+   
+    public void quicksort(int []L){
+	quicksort(L, 0, L.length-1);
     }
-    
-    public static int partition (int[]L, int left, int right){
-	Random R = new Random();
-    	int[]L2 = new int[right-left];
-	int pivotIndex = (R.nextInt(right)+left);
-	System.out.println("pivotIndex: " +pivotIndex);//test
-	int pivot = L[pivotIndex];
-	int l = 0, r = 0;
-       	for (int i = left; i<right; i++){
-	    System.out.println(Arrays.toString(L2));
-	    if (L[i]<=pivot && i != pivotIndex){
-		L2[left+l] = L[i];
-		l++;
-	    }
-	    else if (i != pivotIndex){
-		L2[(L2.length-1) -r] = L[i];
-		r++;
-	    }
-	}
-	L2[left+l] = pivot;
-	System.out.println(Arrays.toString(L2));
-	return pivotIndex;
-    }
-    
-    public static void quicksort(int[]L){
-	quicksort(L, 0, L.length);
-    }
-    
-    public static void quicksort(int[]L, int left, int right){
-	System.out.println(Arrays.toString(L));
-	int pindex = partition(L,left,right);
-	System.out.println(pindex);
-	if (L.length < 2){
+   
+    public void quicksort(int[]L, int left, int right){
+        
+	if (right-left<1){ //not sure this is correct.
 	    return;
 	}
-	quicksort(L, left, pindex-1);
-	quicksort(L, pindex +1, right);
-	
+	int pivIndex = partition(L, left, right);
+	quicksort(L, left, pivIndex-1);
+	quicksort(L, pivIndex+1, right);
+	System.out.println(Arrays.toString(L));
     }
-
-    public static int[] makeArray(int length,int range){
-	Random R = new Random();
-	int[] L = new int[length];
-	for (int i = 0; i < L.length; i++){
-	    if (i == 3) {
-		L[i] = 5;
+   
+   
+    public int partition(int L[], int front, int back){
+	int pivot = L[front];
+	while (front < back)
+	    {
+		while (L[front] < pivot){
+		    front++;
+		}
+		while (L[back] > pivot) {
+		    back--;
+		}
+		  
+		int temp = L[front];
+		L[front] = L[back];
+		L[back] = temp;
 	    }
-	    else{
-		L[i] = R.nextInt(range);
-	    }
-	}
-	return L;
+	return front;
     }
+   
+    /*  
+   public static void main(String[] args){
+      int[] a = new int[10];
+      
+      a[0] = 2;
+      a[1] = 64;
+      a[2] = 25;
+      a[3] = 36;
+      a[4] = 52;
+      a[5] = 43;
+      a[6] = 6;
+      a[7] = 11;
+      a[8] = 98;
+      a[9] = 14;
+      
+      quicksort(a);
+      
+   }
+    */
+   
 }

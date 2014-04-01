@@ -1,6 +1,9 @@
+import java.io.*;
+import java.util.*;
+
 public class Driver{
     public static void main(String[]args){
-	int[]aryA = new int[100000];
+	int[]aryA = new int[10000000];
 	int[]aryB = new int[aryA.length];
 
 	for(int i = 0;i<aryA.length;i++){
