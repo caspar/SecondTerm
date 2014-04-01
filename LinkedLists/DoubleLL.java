@@ -24,7 +24,7 @@ public class DoubleLL<E>{
 
     private Node<E> current = null;
 
-    public void insert(E d){ //edited
+    public void insert(E d){ //Something strange is happening in the first insert...
 	Node<E> n = new Node<E> (d);
 	if (current == null){ //if list is empty
 	    current=n;
@@ -63,14 +63,15 @@ public class DoubleLL<E>{
 
     public static void main (String[] args){
 	DoubleLL<String> L = new DoubleLL<String>();
-	System.out.println(L);
-	L.insert("caspar");
-	System.out.println(L);
-	L.insert("is");
+	L.insert("hello");
+	System.out.println();
+	L.insert("bomb");
 	System.out.println(L);
 	L.insert("da");
 	System.out.println(L);
-	L.insert("bomb");
+	L.insert("is");
+	System.out.println(L);
+	L.insert("caspar");
 	System.out.println(L);
 	// First test these three
 	System.out.println(L.getCurrent());
