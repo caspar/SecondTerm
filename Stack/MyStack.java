@@ -1,7 +1,11 @@
-
-
 import java.util.*;
+
 public class MyStack<T>{
+
+    public static void main(String[] args){
+	MyStack M = new MyStack();
+
+    }
 
     private class Node<T>{
 	private T data;

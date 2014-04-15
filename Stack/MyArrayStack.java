@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class MyArrayStack{
     public static void main(String[] args){
 	MyArrayStack as = new MyArrayStack();
