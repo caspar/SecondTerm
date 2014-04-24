@@ -1,0 +1,55 @@
+1.  A - sums even indexes
+2.  A - B & E have bad params, C: ints are private, D: not static(I think)
+3.  B - duh
+4.  C - [int/int] (greatest integer)
+5.  it would actually return the address, but C - it starts with 4
+6.  E - you need abs, bc you don't know which double is greater
+7.  D - use setName() bc Strings are private
+8.  C - if you put an integer in "'s, it's a String
+9.  B - need [i - 1] because i starts at 1
+10. B - will throw StackOverflowException();
+11. B - if last is 0, it's ok because of 0 indexing
+12. C - I took a pic
+13. B
+14. D - I believe, but I don't know for each-in loops v. well
+15. A - II will return an OutOfBoundsException()
+16. D
+17. C - I took a pic
+18. E
+19. D - MAF
+20. E
+21. come 
+22. back
+23. to 
+24. these
+25. questions
+26. A - x is already the element bc it's a "for each x in y" not B, D, 
+27. 8 - see picture
+28. E - bercause of the conditional not C, D
+29. E not A, B,C
+30. C
+31. C
+32. C - 4x (n*answer)
+33. C
+34. B - not III, because vars are private
+35. E - Nice
+36. C - Even number, odd number <= 9, odd number > 9
+37. E - 
+      I: 1 3 5 
+      II: 1 3 5
+      III: 1 3 5
+38. A - x and y act independently of oneanother, so thay must be spereated by an  ||. (in other words, one does not need the x conditionals and the y conditionals to both be satisfied. But both x conditionals need to be satisfied.)
+39. 16 - see picture
+40. A
+
+    1. len = 5;
+       temp = "WATC";
+       wID("WATC") --> len = 4
+       		       temp = "WAT" --> len = 3
+		       	      	    	temp = "WA" --> len = 2
+					       	    	temp = "W"
+	WATC
+	WAT
+	WA
+	W
+		       	

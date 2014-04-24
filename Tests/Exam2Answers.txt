@@ -1,0 +1,40 @@
+
+
+Capsar Lant
+Tuesday, April 15th, 2014
+
+1.  E
+2.  B
+3.  B
+4.  A
+5.  B - this is difficult
+6.  E - you need "new", and (String, int)
+7.  E - Card[] is declared
+8.  D - must be myDeck[i], and conditional must be (i>=13 && ...)
+9.  E - when you print a class with a toString method, it is automatically called?
+10. C - Special case handling, duh 
+11. B - infinte loop where x decrements every instance
+12. A - simple double negative
+13. E - the first two are ok, because AL's auto expand w set() & add()
+14. D - maybe. Come back to this
+15. C - because 'super' refers to Quadrilateral, and it only takes 1 param 
+16. C
+17. A or B - wtf is a client program???
+18. C
+19. 
+20. E
+21. A
+22. A or B - I ran it and both I and II ran. III, however, did not
+23. B - casting as an int is the equivalent of running [x] (greatest integer)
+24. D - %10 returns last digit
+25. A, I ran it in sorting-algorithms.com - not C, not B, I don't think it's A
+26. D
+27. E - s.substring(4) will return an empty String, not null. also I ran it
+28. A - floating pt errors can happen with large numbers. not B not c (it would wrap)
+29. B
+30. D - arr[mid+1] or arr[mid-1] could be key 
+31. B
+32. B
+33. A - not II; casting as an Integer obj would print addresses (ie, [@1452 )
+34. C
+35. A - substing(inclusive, exclusive)

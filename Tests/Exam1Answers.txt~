@@ -1,0 +1,40 @@
+1.  A - sums even indexes
+2.  A - B & E have bad params, C: ints are private, D: not static(I think)
+3.  B - duh
+4.  C - [int/int] (greatest integer)
+5.  it would actually return the address, but C - it starts with 4
+6.  E - you need abs, bc you don't know which double is greater
+7.  D - use setName() bc Strings are private
+8.  C - if you put an integer in "'s, it's a String
+9.  B - need [i - 1] because i starts at 1
+10. B - will throw StackOverflowException();
+11. B - if last is 0, it's ok because of 0 indexing
+12. C - I took a pic
+13. B
+14. D - I believe, but I don't know for each-in loops v. well
+15. A - II will return an OutOfBoundsException()
+16. D
+17. C - I took a pic
+18. E
+19. D - MAF
+20. 
+21.  
+22. 
+23. 
+24. 
+25. 
+26. 
+27. 
+28. 
+29. 
+30. 
+31. 
+32. 
+33. 
+34. 
+35.   
+36. 
+37. 
+38. 
+39. 
+40. 
