@@ -1,0 +1,25 @@
+
+
+3/25/14 - Iterable and Iterator
+Iterator: hasNext(), next()
+
+	  while (c.hasNext()){
+		SOP(c.next());
+	  }	  	  
+	
+	* The list is iterable, 
+	* so I can use it whenever without worrying about resetting
+
+	list is iterable if it can make an iterator w/ iterable()
+	
+Iterable: "I can manufacture an Iterator & give it to you"
+Interface: Abstract Class; Blueprints you will use to extend your Class
+
+4/30/14 - Typecasting 
+
+* you are allowed to instanciate SuperClass x = new SubClass(); , 
+  but not Subclass x = new SuperClass();
+
+* you can typecast (Subclass) <instance of SuperClass>
+
+* when you use super.Method() in a subclass, it is borrowing Method(), not turning into the superclass

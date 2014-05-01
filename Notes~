@@ -14,3 +14,10 @@ Iterator: hasNext(), next()
 	
 Iterable: "I can manufacture an Iterator & give it to you"
 Interface: Abstract Class; Blueprints you will use to extend your Class
+
+4/30/14 - Typecasting 
+
+* you are allowed to instanciate SuperClass x = new SubClass(); , 
+  but not Subclass x = new SuperClass();
+
+* you can typecast (Subclass) <instance of SuperClass>
