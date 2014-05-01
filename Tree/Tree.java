@@ -9,7 +9,7 @@ public class Tree{
 	private static int depth = 1;
 
 	public static void main(String[] args){
-		Tree t = new Tree(10);
+		Tree t = new Tree();
 		t.add(9);
 		t.add(8);
 		System.out.println(depth);
@@ -38,6 +38,7 @@ public class Tree{
 		public void setNextRight(Node next){
 			this.nextRight=next;
 		}	
+
 		public void setNextLeft(Node next){
 			this.nextLeft=next;
 		}
@@ -62,22 +63,23 @@ public class Tree{
 		public void increment(){
 			quantity++;	
 		}
+		public void decrement(){
+			quantity--;	
+		}
 		public int getQuantity(){
 			return quantity;
 		}
-
 	}
 
-	//public Tree(){
-	//	Tree(10);
-	//}
+	public Tree(){
+		head = new Node(0);	
+	}
+
 	public Tree(int value){
 		head = new Node(value);
 	}
 
-
 	public void add(int value){ //why don't I do this recursively... Or not
-		if (head == null) head.setValue(value);
 		Node current = head;
 		for (int i = 0; i < depth; i++){
 			if (current.getValue() == value){
@@ -108,13 +110,63 @@ public class Tree{
 		}	
 	}
 
-	public final void remove(){
+	public void remove(value){ //Doesn't actually remove, just sets value to 0...
+		Node current = head;
+		for (int i = 0; i < depth; i++){
+			if (current.getValue() == value){
+				if (current.getQuantity() > 0){
+					current.decrement();	
+					return;
+				}
+				System.out.println("Tree does not contain " + value);
+			}	
+			if(current.getValue() > value){
+				if (current.hasLeft())
+					current = current.getLeft();
+				else{
+					System.out.println("Tree does not contain " + value);
+					return;
+				}
 
+			}
+			if(current.getValue() < value){
+				if (current.hasRight())
+					current = current.getRight();
+				else{
+					System.out.println("Tree does not contain " + value);
+					return;
+				}	
+			}
+		}	
+	}
+
+	public int find(int value){ //returns quantity of value
+		Node current = head;
+		for (int i = 0; i < depth; i++){
+			if (current.getValue() == value){ 
+				return current.getQuantity();
+			}
+			if(current.getValue() > value){
+				if (current.hasLeft())
+					current = current.getLeft();
+				else{
+					System.out.println("Tree does not contain " + value);
+					return -1;
+				}
+			}
+			if(current.getValue() < value){
+				if (current.hasRight())
+					current = current.getRight();
+				else{
+					System.out.println("Tree does not contain " + value);
+					return -1;
+				}	
+			}
+		}	
 	}
 
 	public int getDepth(){
 		return depth;
 	}
-
 
 }
