@@ -1,4 +1,11 @@
+5/7/14 - Binary Search Trees
 
+1. Sorted List --> BST  | O(n)
+2. Unsorted List --> BST | O(nlogn)
+3. print all elements | O(n)
+4. find(x) | O(logn) <--> O(n)
+5. add(x) | ``
+6. remove(x) | ``
 
 3/25/14 - Iterable and Iterator
 Iterator: hasNext(), next()
@@ -21,3 +28,5 @@ Interface: Abstract Class; Blueprints you will use to extend your Class
   but not Subclass x = new SuperClass();
 
 * you can typecast (Subclass) <instance of SuperClass>
+
+* when you use super.Method() in a subclass, it is borrowing Method(), not turning into the superclass

@@ -1,11 +1,15 @@
 import java.io.*;
 import java.util.*;
+//import java.util.Math;
+//import java.Math;
 
 public class Test {
 
     public static void main(String[] args){
-	Scanner sc = new Scanner(System.in);
-	int i = sc.nextInt();
-	System.out.println(i);
+	Random r = new Random();
+	
+	for (int i = 0; i < 100 ; i ++)
+	    System.out.println((int)(Math.random * 5));
+
 	}
 }

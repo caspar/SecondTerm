@@ -1,4 +1,32 @@
+5/8/14 - Heaps
 
+Properties of Heaps:
+1. Every node has a value >= (<= if minHeap) the children's values
+2. Tree is filled left to right before adding a new level
+
+methods: 
+delete() : O(logn)
+	 - replace element with bottom rightmost element
+	 - push that value down (swapping with largest child until it is a heap)
+insert() : O(logn)
+	 - add element ot bottom right
+	 - push value up...
+
+sort() : O(nlogn)
+
+More:
+- Node has ID 'i'
+- children: 2i, 2i+1
+- parent i/2 
+
+5/7/14 - Binary Search Trees
+
+1. Sorted List --> BST  | O(n)
+2. Unsorted List --> BST | O(nlogn)
+3. print all elements | O(n)
+4. find(x) | O(logn) <--> O(n)
+5. add(x) | ``
+6. remove(x) | ``
 
 3/25/14 - Iterable and Iterator
 Iterator: hasNext(), next()

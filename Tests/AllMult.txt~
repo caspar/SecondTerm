@@ -17,7 +17,7 @@ Capsar Lant  Tuesday, April 15th, 2014
 16. C
 17. A or B - wtf is a client program???
 18. C
-19. 
+19. C 
 20. E
 21. A
 22. A or B - I ran it and both I and II ran. III, however, did not
@@ -87,3 +87,8 @@ Capsar Lant  Tuesday, April 15th, 2014
 	WAT
 	WA
 	W
+
+Questions:
+* Exam 2 #18:
+
+can you declare Superclass var = new Subclass() ???
